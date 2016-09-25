@@ -1,28 +1,3 @@
-;; IMAP サーバの設定
-
-(setq elmo-imap4-default-server "imap.gmail.com")
-(setq elmo-imap4-default-user "atauky@gmail.com") ; gmailのアカウントを
-(setq elmo-imap4-default-authenticate-type 'clear)
-(setq elmo-imap4-default-port '993)
-(setq elmo-imap4-default-stream-type 'ssl)
-
-(setq elmo-imap4-use-modified-utf7 t) ; 日本語フォルダ対策
-(setq ssl-program-name "gnutls-cli")
-(setq ssl-program-arguments '("-p" service host))
-					; update 2010.01.14
-					;(setq ssl-program-name "openssl")
-					;(setq ssl-program-arguments '("s_client" "-quiet" "-host" host "-port" service))
-
-;; SMTP サーバの設定
-(setq wl-smtp-connection-type 'starttls)
-(setq wl-smtp-posting-port 587)
-(setq wl-smtp-authenticate-type "plain")
-(setq wl-smtp-posting-user "atauky") ; メールアドレスの@より前の部分
-(setq wl-smtp-posting-server "smtp.gmail.com")
-(setq wl-local-domain "gmail.com")
-
-;; unique message-id
-(setq wl-from "atauky@gmail.com")
 
 ;; デフォルトのフォルダ
 (setq wl-default-folder "%inbox")
