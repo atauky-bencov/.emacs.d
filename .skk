@@ -1,0 +1,48 @@
+; -*- Mode: Emacs-Lisp -*-
+;; 辞書設定
+;; 辞書サーバを使うとき
+(setq skk-server-host "localhost")
+(setq skk-server-portnum 1178)
+;(setq skk-server-report-response t)
+
+;; 辞書サーバが使えないとき
+(setq skk-large-jisyo "~/.emacs.d/skk-get-jisyo/SKK-JISYO.L")
+(setq skk-extra-jisyo-file-list
+      (list "~/.emacs.d/skk-get-jisyo/SKK-JISYO.hatena")
+      )
+
+; 自動ダイナミックコンプリーション
+(setq skk-dcomp-activate t)
+; 自動変換開始機能
+(setq skk-auto-start-henkan t)
+; 送り仮名関係
+(setq skk-check-okurigana-on-touroku 'ask)
+(setq skk-process-okuri-early nil)
+(setq skk-henkan-okuri-strictly t)
+(setq skk-auto-okuri-process t)
+; 日付は西暦でいれる
+(setq skk-date-ad t)
+(setq skk-number-style 0)
+; Enterで改行しない
+(setq skk-egg-like-newline t)
+; 注釈を表示する
+(setq skk-show-annotation t)
+
+;; 複数の Emacsen を起動して個人辞書を共有する
+(setq skk-share-private-jisyo t)
+
+;; 変換テーブル
+
+(setq skk-rom-kana-rule-list
+      (append skk-rom-kana-rule-list
+	      '(
+		("?" nil "?")
+		("!" nil "!")
+		(":" nil ":")
+		(";" nil ";")
+		("[" nil "[")
+		("]" nil "]")
+		("z[" nil "「")
+		("z]" nil "」")
+		
+		              )))
